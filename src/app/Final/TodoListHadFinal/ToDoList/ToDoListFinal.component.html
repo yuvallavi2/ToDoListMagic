@@ -29,6 +29,7 @@
           class="ToDoRowProps"
           magic="ToDoRow"
           [ngClass]="{ 'selected': isRowSelected('Table1048577', row.rowId)}"
+          magicMark="magicTableRowContainer"
       >
         <!--<div-->
           <!--*ngIf="mgIfRowCreated(row.rowId)"-->
@@ -43,33 +44,39 @@
               <!--magic="ToDoRow"-->
               <!--class="ToDoRowProps"-->
             <!--&gt;-->
-              <td >
+              <td  magicMark="magicTableRowContainer">
                 <label
                   magic="Description"
                   [rowId]="row.rowId"
                   class="DescriptionProps hidden_border"
+
                 >
                   {{mgGetValue('Description', row.rowId)}}
                 </label>
               </td>
-              <td>
-                <div
-                  magic="IsDone"
-                  [rowId]="row.rowId"
-                  class="IsDoneProps"
-                >
-                  <mat-checkbox>
-
-                  </mat-checkbox>
-                  <input
-                    type="checkbox"
-                    id="IsDone"
-                    formControlName="IsDone"
+              <td magicMark="magicTableRowContainer">
+                <!--<div-->
+                  <!--magic="IsDone"-->
+                  <!--[rowId]="row.rowId"-->
+                  <!--class="IsDoneProps"-->
+                <!--&gt;-->
+                  <mat-checkbox
+                    value=""
+                    magic="IsDone"
+                    [rowId]="row.rowId"
+                    class="IsDoneProps"
                     (change)="mgOnCheckChanged($event,'IsDone', row.rowId)"
-                  />
-                </div>
+                    formControlName="IsDone"
+                  ></mat-checkbox>
+                  <!--<input-->
+                    <!--type="checkbox"-->
+                    <!--id="IsDone"-->
+                    <!--formControlName="IsDone"-->
+                    <!--(change)="mgOnCheckChanged($event,'IsDone', row.rowId)"-->
+                  <!--/>-->
+                <!--</div>-->
               </td>
-              <td>
+              <td >
                 <button mat-icon-button color="warn" magic="pbDel" [rowId]="row.rowId">
                   <mat-icon>delete</mat-icon>
                 </button>
