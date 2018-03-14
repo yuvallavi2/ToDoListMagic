@@ -23,22 +23,27 @@
       <!--magic="Table1048577"-->
       <!--class="Table1048577Props"-->
       <!--&gt;-->
-      <tbody>
-      <div *ngFor="let row of task.Records.list">
-        <div
-          *ngIf="mgIfRowCreated(row.rowId)"
-          id="row"
-        >
-          <form
-            [formGroup]="mgGetFormGroupByRow(row.rowId)"
-            class="Table1048577_table_rowProps"
-            [ngClass]="{ 'selected': isRowSelected('Table1048577', row.rowId)}"
-          >
-            <div
-              magic="ToDoRow"
-              class="ToDoRowProps"
-            >
-              <td>
+      <tbody class="Table1048577_table_rowProps">
+      <tr *ngFor="let row of task.Records.list"
+          [formGroup]="mgGetFormGroupByRow(row.rowId)"
+          class="ToDoRowProps"
+          magic="ToDoRow"
+          [ngClass]="{ 'selected': isRowSelected('Table1048577', row.rowId)}"
+      >
+        <!--<div-->
+          <!--*ngIf="mgIfRowCreated(row.rowId)"-->
+          <!--id="row"-->
+        <!--&gt;-->
+          <!--<form-->
+            <!--[formGroup]="mgGetFormGroupByRow(row.rowId)"-->
+            <!--class="Table1048577_table_rowProps"-->
+            <!--[ngClass]="{ 'selected': isRowSelected('Table1048577', row.rowId)}"-->
+          <!--&gt;-->
+            <!--<div-->
+              <!--magic="ToDoRow"-->
+              <!--class="ToDoRowProps"-->
+            <!--&gt;-->
+              <td >
                 <label
                   magic="Description"
                   [rowId]="row.rowId"
@@ -75,10 +80,10 @@
                   <!--class="pbDelProps"-->
                 <!--/>-->
               </td>
-            </div>
-          </form>
-        </div>
-      </div>
+            <!--</div>-->
+          <!--</form>-->
+        <!--</div>-->
+      </tr>
       </tbody>
       <!--</div>-->
     </table>
