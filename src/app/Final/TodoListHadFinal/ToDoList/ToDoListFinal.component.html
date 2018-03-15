@@ -10,19 +10,11 @@
     <table class="table table-striped table-condensed border table-hover table-sm">
       <thead class="thead-dark">
       <tr>
-        <!--<td scope="col">#</td>-->
         <td scope="col" style="width: 60%">Descriptions</td>
-        <!--<td scope="col">End D.</td>-->
-        <!--<td scope="col">Priority</td>-->
         <td scope="col">Check</td>
         <td scope="col" class="td-actions">Actions</td>
       </tr>
       </thead>
-      <!--<div-->
-      <!--class="Table1048577"-->
-      <!--magic="Table1048577"-->
-      <!--class="Table1048577Props"-->
-      <!--&gt;-->
       <tbody class="Table1048577_table_rowProps">
       <tr *ngFor="let row of task.Records.list"
           [formGroup]="mgGetFormGroupByRow(row.rowId)"
@@ -31,19 +23,6 @@
           [ngClass]="{ 'selected': isRowSelected('Table1048577', row.rowId)}"
           magicMark="magicTableRowContainer"
       >
-        <!--<div-->
-          <!--*ngIf="mgIfRowCreated(row.rowId)"-->
-          <!--id="row"-->
-        <!--&gt;-->
-          <!--<form-->
-            <!--[formGroup]="mgGetFormGroupByRow(row.rowId)"-->
-            <!--class="Table1048577_table_rowProps"-->
-            <!--[ngClass]="{ 'selected': isRowSelected('Table1048577', row.rowId)}"-->
-          <!--&gt;-->
-            <!--<div-->
-              <!--magic="ToDoRow"-->
-              <!--class="ToDoRowProps"-->
-            <!--&gt;-->
               <td  magicMark="magicTableRowContainer">
                 <label
                   magic="Description"
@@ -55,11 +34,6 @@
                 </label>
               </td>
               <td magicMark="magicTableRowContainer">
-                <!--<div-->
-                  <!--magic="IsDone"-->
-                  <!--[rowId]="row.rowId"-->
-                  <!--class="IsDoneProps"-->
-                <!--&gt;-->
                   <mat-checkbox
                     value=""
                     magic="IsDone"
@@ -68,31 +42,14 @@
                     (change)="mgOnCheckChanged($event,'IsDone', row.rowId)"
                     formControlName="IsDone"
                   ></mat-checkbox>
-                  <!--<input-->
-                    <!--type="checkbox"-->
-                    <!--id="IsDone"-->
-                    <!--formControlName="IsDone"-->
-                    <!--(change)="mgOnCheckChanged($event,'IsDone', row.rowId)"-->
-                  <!--/>-->
-                <!--</div>-->
               </td>
               <td >
                 <button mat-icon-button color="warn" magic="pbDel" [rowId]="row.rowId">
                   <mat-icon>delete</mat-icon>
                 </button>
-                <!--<input-->
-                  <!--type="button"-->
-                  <!--magic="pbDel"-->
-                  <!--[rowId]="row.rowId"-->
-                  <!--class="pbDelProps"-->
-                <!--/>-->
               </td>
-            <!--</div>-->
-          <!--</form>-->
-        <!--</div>-->
       </tr>
       </tbody>
-      <!--</div>-->
     </table>
   </div>
 </form>
